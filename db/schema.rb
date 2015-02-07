@@ -13,7 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20150207064643) do
 
-
   create_table "allow_times", force: true do |t|
     t.integer  "parking_id"
     t.integer  "weekday"
@@ -38,6 +37,16 @@ ActiveRecord::Schema.define(version: 20150207064643) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "photo"
+  end
+
+  create_table "reservations", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "parking_id"
+    t.datetime "start_at"
+    t.datetime "end_at"
+    t.integer  "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
