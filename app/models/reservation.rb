@@ -1,8 +1,8 @@
 class Reservation < ActiveRecord::Base
   STATUS_LIST = [
-    DEMAND   = 1, # 希望
-    APPROVED = 2, # 承認
-    DENIED   = 3, # 拒否
+    DEMAND   = { code: 1, label: "希望" }, # 希望
+    APPROVED = { code: 2, label: "承認" }, # 承認
+    DENIED   = { code: 3, label: "拒否" }, # 拒否
   ]
 
   belongs_to :user
