@@ -62,13 +62,29 @@ class ParkingsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_parking
-      @parking = Parking.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def parking_params
-      params.require(:parking).permit(:address, :name, :photo, :user_id, :memo)
-    end
+  def set_parking
+    @parking = Parking.includes(:allow_times, :deny_dates).find(params[:id])
+  end
+
+  def parking_params
+    params.require(:parking).permit(:name,
+                                    :address,
+                                    :user_id,
+                                    :memo,
+                                    {
+                                      allow_times_attributes: [
+                                        :id,
+                                        :weekday,
+                                        :start_time,
+                                        :end_time,
+                                        :_destroy
+                                      ],
+                                      deny_dates_attributes: [
+                                        :id,
+                                        :date,
+                                        :_destroy
+                                      ]
+                                    })
+  end
 end

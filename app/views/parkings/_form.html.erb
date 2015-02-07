@@ -29,10 +29,44 @@
       <%= f.file_field :photo, :class => 'file_field' %>
     </div>
   </div>
+  <h2><%= AllowTime.model_name.human.titleize %></h2>
+  <% if @parking.allow_times.present? %>
+    <%= render partial: "allow_times", locals: { allow_times: @parking.allow_times } %>
+  <% end %>
+  <div id="allow_times">
+    <%= f.fields_for :allow_times do |allow_time| %>
+      <%= render partial: "allow_time_fields", locals: { f: allow_time } %>
+    <% end %>
+    <div class="control-group">
+      <div class="controls">
+        <%= link_to_add_association "Add", f, :allow_times, class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+  <h2><%= DenyDate.model_name.human.titleize %></h2>
+  <% if @parking.deny_dates.present? %>
+    <%= render partial: "deny_dates", locals: { deny_dates: @parking.deny_dates } %>
+  <% end %>
+  <div id="deny_dates">
+    <%= f.fields_for :deny_dates do |deny_date| %>
+      <%= render partial: "deny_date_fields", locals: { f: deny_date } %>
+    <% end %>
+    <div class="control-group">
+      <div class="controls">
+        <%= link_to_add_association "Add", f, :deny_dates, class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
 
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 parkings_path, :class => 'btn' %>
   </div>
+<% end %>
+
+<%= javascript_tag do %>
+  $(document).ready(function(){
+    $('.datepicker').datepicker();
+  });
 <% end %>

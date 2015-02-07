@@ -1,0 +1,19 @@
+<%- model_class = AllowTime -%>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:weekday) %></th>
+      <th><%= model_class.human_attribute_name(:start_time) %></th>
+      <th><%= model_class.human_attribute_name(:end_time) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% allow_times.each do |allow_time| %>
+      <tr>
+        <td><%= allow_time.weekday %></td>
+        <td><%= allow_time.start_time %></td>
+        <td><%= allow_time.end_time %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
