@@ -13,11 +13,19 @@
 
 ActiveRecord::Schema.define(version: 20150207064643) do
 
+
   create_table "allow_times", force: true do |t|
     t.integer  "parking_id"
     t.integer  "weekday"
     t.string   "start_time"
     t.string   "end_time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "deny_dates", force: true do |t|
+    t.integer  "parking_id"
+    t.date     "date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
