@@ -46,3 +46,4 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem "carrierwave"
 gem "less-rails"
 gem "twitter-bootstrap-rails"
+gem "bootstrap-datepicker-rails"
