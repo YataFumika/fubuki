@@ -1,0 +1,25 @@
+/Users/Fuchs/.rbenv/versions/2.0.0-p247/bin/ruby -r ./siteconf20150207-15610-hqm3iv.rb extconf.rb 
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling bcrypt_ext.c
+bcrypt_ext.c:27:19: warning: implicit declaration of function 'ruby_bcrypt' is invalid in C99 [-Wimplicit-function-declaration]
+    return (VALUE)ruby_bcrypt(args->output, args->key, args->salt);
+                  ^
+1 warning generated.
+compiling crypt.c
+compiling crypt_blowfish.c
+compiling crypt_gensalt.c
+compiling wrapper.c
+In file included from wrapper.c:27:
+/Users/Fuchs/.rbenv/versions/2.0.0-p247/include/ruby-2.0.0/ruby/backward/util.h:2:2: warning: use "ruby/util.h" instead of bare "util.h" [-W#warnings]
+#warning use "ruby/util.h" instead of bare "util.h"
+ ^
+1 warning generated.
+linking shared-object bcrypt_ext.bundle
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bcrypt_ext.bundle ./.gem.20150207-15610-1crsllv
+installing default bcrypt_ext libraries
