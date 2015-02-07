@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :parking_id %><br>
-    <%= f.text_field :parking_id %>
+    <%= f.select :parking_id ,Parking.name %>
   </div>
   <div class="field">
     <%= f.label :start_at %><br>
