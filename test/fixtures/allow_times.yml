@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  parking_id: 1
+  weekday: 1
+  start_time: MyString
+  end_time: MyString
+
+two:
+  parking_id: 1
+  weekday: 1
+  start_time: MyString
+  end_time: MyString
