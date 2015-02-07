@@ -1,0 +1,10 @@
+/Users/Fuchs/.rbenv/versions/2.0.0-p247/bin/ruby -r ./siteconf20150207-9919-f9sw6r.rb extconf.rb 
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+make: Nothing to be done for `all'.
+
+make "DESTDIR=" install
+installing default libraries
