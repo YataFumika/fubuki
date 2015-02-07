@@ -1,12 +1,10 @@
 # -*- encoding: utf-8 -*-
-# stub: arel 4.0.2 ruby lib
 
 Gem::Specification.new do |s|
   s.name = "arel"
   s.version = "4.0.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.require_paths = ["lib"]
   s.authors = ["Aaron Patterson", "Bryan Halmkamp", "Emilio Tagua", "Nick Kallen"]
   s.date = "2014-02-05"
   s.description = "Arel is a SQL AST manager for Ruby. It\n\n1. Simplifies the generation of complex SQL queries\n2. Adapts to various RDBMS systems\n\nIt is intended to be a framework framework; that is, you can build your own ORM\nwith it, focusing on innovative object and collection modeling as opposed to\ndatabase compatibility and query generation."
@@ -16,11 +14,10 @@ Gem::Specification.new do |s|
   s.homepage = "http://github.com/rails/arel"
   s.licenses = ["MIT"]
   s.rdoc_options = ["--main", "README.markdown"]
+  s.require_paths = ["lib"]
   s.rubyforge_project = "arel"
-  s.rubygems_version = "2.4.2"
+  s.rubygems_version = "2.0.3"
   s.summary = "Arel is a SQL AST manager for Ruby"
-
-  s.installed_by_version = "2.4.2" if s.respond_to? :installed_by_version
 
   if s.respond_to? :specification_version then
     s.specification_version = 4

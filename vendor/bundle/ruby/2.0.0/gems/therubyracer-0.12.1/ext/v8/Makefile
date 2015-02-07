@@ -11,12 +11,12 @@ ECHO = $(ECHO1:0=@echo)
 #### Start of system configuration section. ####
 
 srcdir = .
-topdir = /Users/Fuchs/.rbenv/versions/2.0.0-p247/include/ruby-2.0.0
+topdir = /Users/matsue-city05/.rbenv/versions/2.0.0-p247/include/ruby-2.0.0
 hdrdir = $(topdir)
-arch_hdrdir = /Users/Fuchs/.rbenv/versions/2.0.0-p247/include/ruby-2.0.0/x86_64-darwin12.5.0
+arch_hdrdir = /Users/matsue-city05/.rbenv/versions/2.0.0-p247/include/ruby-2.0.0/x86_64-darwin12.4.0
 PATH_SEPARATOR = :
 VPATH = $(srcdir):$(arch_hdrdir)/ruby:$(hdrdir)/ruby
-prefix = /Users/Fuchs/.rbenv/versions/2.0.0-p247
+prefix = /Users/matsue-city05/.rbenv/versions/2.0.0-p247
 rubysitearchprefix = $(rubylibprefix)/$(sitearch)
 rubyarchprefix = $(rubylibprefix)/$(arch)
 rubylibprefix = $(libdir)/$(RUBY_BASE_NAME)
@@ -30,8 +30,8 @@ rubyhdrdir = $(includedir)/$(RUBY_VERSION_NAME)
 vendorarchdir = $(vendorlibdir)/$(sitearch)
 vendorlibdir = $(vendordir)/$(ruby_version)
 vendordir = $(rubylibprefix)/vendor_ruby
-sitearchdir = ./.gem.20150207-16102-1x4gzrh
-sitelibdir = ./.gem.20150207-16102-1x4gzrh
+sitearchdir = ./.gem.20150207-3347-1xsfbky
+sitelibdir = ./.gem.20150207-3347-1xsfbky
 sitedir = $(rubylibprefix)/site_ruby
 rubyarchdir = $(rubylibdir)/$(arch)
 rubylibdir = $(rubylibprefix)/$(ruby_version)
@@ -62,7 +62,7 @@ bindir = $(exec_prefix)/bin
 archdir = $(rubyarchdir)
 
 
-CC = clang
+CC = gcc-4.2
 CXX = g++
 LIBRUBY = $(LIBRUBY_A)
 LIBRUBY_A = lib$(RUBY_SO_NAME)-static.a
@@ -79,11 +79,11 @@ debugflags = -ggdb3
 warnflags = -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings  -Wshorten-64-to-32 
 CCDLFLAGS = -fno-common
 CFLAGS   = $(CCDLFLAGS)  -O3 -Wno-error=shorten-64-to-32  -pipe $(ARCH_FLAG)
-INCFLAGS = -I. -I/Users/Fuchs/project/fubuki/vendor/bundle/ruby/2.0.0/gems/libv8-3.16.14.7/vendor/v8/include -I$(arch_hdrdir) -I$(hdrdir)/ruby/backward -I$(hdrdir) -I$(srcdir)
+INCFLAGS = -I. -I/Users/matsue-city05/fubuki/vendor/bundle/ruby/2.0.0/gems/libv8-3.16.14.7/vendor/v8/include -I$(arch_hdrdir) -I$(hdrdir)/ruby/backward -I$(hdrdir) -I$(srcdir)
 DEFS     = 
-CPPFLAGS =  -I'/Users/Fuchs/.rbenv/versions/2.0.0-p247/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT $(DEFS) $(cppflags) -Wall -g -rdynamic
+CPPFLAGS =  -I/Users/matsue-city05/.rbenv/versions/2.0.0-p247/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT $(DEFS) $(cppflags) -Wall -g -rdynamic
 CXXFLAGS = $(CCDLFLAGS) $(cxxflags) $(ARCH_FLAG)
-ldflags  = /Users/Fuchs/project/fubuki/vendor/bundle/ruby/2.0.0/gems/libv8-3.16.14.7/vendor/v8/out/x64.release/libv8_base.a /Users/Fuchs/project/fubuki/vendor/bundle/ruby/2.0.0/gems/libv8-3.16.14.7/vendor/v8/out/x64.release/libv8_snapshot.a -L. -L'/Users/Fuchs/.rbenv/versions/2.0.0-p247/lib' 
+ldflags  = /Users/matsue-city05/fubuki/vendor/bundle/ruby/2.0.0/gems/libv8-3.16.14.7/vendor/v8/out/x64.release/libv8_base.a /Users/matsue-city05/fubuki/vendor/bundle/ruby/2.0.0/gems/libv8-3.16.14.7/vendor/v8/out/x64.release/libv8_snapshot.a -L. -L/Users/matsue-city05/.rbenv/versions/2.0.0-p247/lib 
 dldflags = -Wl,-undefined,dynamic_lookup -Wl,-multiply_defined,suppress 
 ARCH_FLAG = 
 DLDFLAGS = $(ldflags) $(dldflags) $(ARCH_FLAG)
@@ -99,7 +99,7 @@ RUBY_VERSION_NAME = $(RUBY_BASE_NAME)-$(ruby_version)
 RUBYW_BASE_NAME = rubyw
 RUBY_BASE_NAME = ruby
 
-arch = x86_64-darwin12.5.0
+arch = x86_64-darwin12.4.0
 sitearch = $(arch)
 ruby_version = 2.0.0
 ruby = $(bindir)/ruby

@@ -212,7 +212,6 @@
             '-Wendif-labels',
             '-W',
             '-Wno-unused-parameter',
-            '-Wno-unused-variable',
             '-Wnon-virtual-dtor',
           ],
         },

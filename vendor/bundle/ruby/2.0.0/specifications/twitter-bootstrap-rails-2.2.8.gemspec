@@ -1,23 +1,20 @@
 # -*- encoding: utf-8 -*-
-# stub: twitter-bootstrap-rails 2.2.8 ruby lib
 
 Gem::Specification.new do |s|
   s.name = "twitter-bootstrap-rails"
   s.version = "2.2.8"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.require_paths = ["lib"]
   s.authors = ["Seyhun Akyurek"]
   s.date = "2013-08-07"
   s.description = "twitter-bootstrap-rails project integrates Bootstrap CSS toolkit for Rails 3.1 Asset Pipeline"
   s.email = ["seyhunak@gmail.com"]
   s.homepage = "https://github.com/seyhunak/twitter-bootstrap-rails"
   s.post_install_message = "Important: You may need to add a javascript runtime to your Gemfile in order for bootstrap's LESS files to compile to CSS. \n\n**********************************************\n\nExecJS supports these runtimes:\n\ntherubyracer - Google V8 embedded within Ruby\n\ntherubyrhino - Mozilla Rhino embedded within JRuby\n\nNode.js\n\nApple JavaScriptCore - Included with Mac OS X\n\nMicrosoft Windows Script Host (JScript)\n\n**********************************************\n"
+  s.require_paths = ["lib"]
   s.rubyforge_project = "twitter-bootstrap-rails"
-  s.rubygems_version = "2.4.2"
+  s.rubygems_version = "2.0.3"
   s.summary = "Bootstrap CSS toolkit for Rails 3.1 Asset Pipeline"
-
-  s.installed_by_version = "2.4.2" if s.respond_to? :installed_by_version
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
