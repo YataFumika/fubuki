@@ -3,7 +3,12 @@ class ReservationsController < ApplicationController
   before_action :reservation_params ,only: [:create,:update]
   
   def index
-    #予約の一覧 貸す予定（Reservation.parking.user = login_user） 借りる予定（Reservation.user = login_user）
+    #予約の一覧
+    # 借りる予定 rent
+    @reservations_rent = Reservation.rent
+
+    # 貸す予定 lend
+    @reservations_lend = Reservation.lend
   end
   
   def show

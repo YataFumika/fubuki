@@ -1,0 +1,31 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>駐車場</th>
+      <th>開始時間</th>
+      <th>終了時間</th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% list.each do |reservation| %>
+      <tr>
+        <td><%= link_to reservation.id, reservation_path(reservation) %></td>
+        <td><%= reservation.user.try(:name) %></td>
+        <td><%= reservation.parking.try(:name) %></td>
+        <td><%= reservation.start_at %></td>
+        <td><%= reservation.end_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_reservation_path(reservation), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      reservation_path(reservation),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,13 @@
+<div class="page-header">
+  <h1>予約一覧</h1>
+</div>
+
+<h2>あなたが借りる予定の貸駐車</h2>
+<%= render partial: 'res_index', locals: { list: @reservations_rent } %>
+
+<h2>あなたが借す予定の貸駐車</h2>
+<%= render partial: 'res_index', locals: { list: @reservations_lend } %>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_reservation_path,
+            :class => 'btn btn-primary' %>
