@@ -17,6 +17,7 @@ Fubuki::Application.routes.draw do
   #   resources :products
   resources :users
   resources :parkings
+  resources :reservations
 
   # Example resource route with options:
   #   resources :products do
