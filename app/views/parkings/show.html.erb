@@ -13,7 +13,7 @@
   <dt><strong><%= model_class.human_attribute_name(:memo) %>:</strong></dt>
   <dd><%= @parking.memo %></dd>
   <dt><strong><%= model_class.human_attribute_name(:photo) %>:</strong></dt>
-  <dd><%= @parking.photo %></dd>
+  <dd><%= image_tag(@parking.photo_url) %></dd>
 </dl>
 
 <div class="form-actions">
