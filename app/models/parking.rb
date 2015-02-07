@@ -5,5 +5,7 @@ class Parking < ActiveRecord::Base
   has_many :deny_dates
   belongs_to :user
 
+  accepts_nested_attributes_for :allow_times, :deny_dates
+
   validates :name, :memo, presence: true
 end
