@@ -1,5 +1,5 @@
 class ReservationsController < ApplicationController
-  before_action :reservation_find ,only: [:show,:edit,:destroy]
+  before_action :reservation_find ,only: [:show,:edit,:update,:destroy]
   before_action :reservation_params ,only: [:create,:update]
   
   def index
@@ -15,10 +15,11 @@ class ReservationsController < ApplicationController
   end
   
   def create
-    if @reservation.create(reservation_params)
-      redirect_to "index" , notise:"予約申請を完了しました。。。"
+    @reservation = Reservation.new(reservation_params)
+    if @reservation.save
+      redirect_to reservations_path , notise:"予約申請を完了しました。。。"
     else
-      redirect_to "new", alert:"予約神聖に失敗しました。。。"
+      redirect_to new_reservation_path , alert:"予約神聖に失敗しました。。。"
     end
   end
   
@@ -27,6 +28,11 @@ class ReservationsController < ApplicationController
   end
   
   def update
+    if @reservation.update(reservation_params)
+      redirect_to reservations_path , notise:"予約申請を変更しました。。。"
+    else
+      redirect_to edit_reservation_path , alert:"予約申請変更に失敗しました。。。"
+    end
   end
 
   def destroy
@@ -41,5 +47,5 @@ class ReservationsController < ApplicationController
   def  reservation_params
     params.require(:reservation).permit(:user_id,:parking_id,:start_at,:end_at,:status)
   end
-
+  
 end
