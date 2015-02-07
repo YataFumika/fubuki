@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  parking_id: 1
+  date: 2015-02-07
+
+two:
+  parking_id: 1
+  date: 2015-02-07
