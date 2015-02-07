@@ -5,7 +5,7 @@ class CreateReservations < ActiveRecord::Migration
       t.integer :parking_id
       t.datetime :start_at
       t.datetime :end_at
-      t.intger :status
+      t.integer :status
 
       t.timestamps
     end
