@@ -72,6 +72,9 @@ class ParkingsController < ApplicationController
                                     :address,
                                     :user_id,
                                     :memo,
+                                    :photo,
+                                    :latitude,
+                                    :longitude,
                                     {
                                       allow_times_attributes: [
                                         :id,

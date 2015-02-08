@@ -12,6 +12,8 @@
       <th><%= model_class.human_attribute_name(:memo) %></th>
       <th><%= model_class.human_attribute_name(:photo) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%= model_class.human_attribute_name(:latitude) %></th>
+      <th><%= model_class.human_attribute_name(:longitude) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -24,7 +26,9 @@
         <td><%= parking.user_id %></td>
         <td><%= parking.memo %></td>
         <td><%= parking.photo %></td>
-        <td><%=l parking.created_at %></td>
+        <td><%= parking.created_at %></td>
+        <td><%= parking.latitude %></td>
+        <td><%= parking.longitude %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_parking_path(parking), :class => 'btn btn-mini' %>

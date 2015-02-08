@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150207064643) do
+ActiveRecord::Schema.define(version: 20150208011057) do
 
   create_table "allow_times", force: true do |t|
     t.integer  "parking_id"
@@ -37,6 +37,8 @@ ActiveRecord::Schema.define(version: 20150207064643) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "photo"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   create_table "reservations", force: true do |t|
@@ -56,6 +58,8 @@ ActiveRecord::Schema.define(version: 20150207064643) do
     t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "latitude"
+    t.string   "logitude"
   end
 
 end

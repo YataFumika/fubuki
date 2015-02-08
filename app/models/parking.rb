@@ -4,6 +4,8 @@ class Parking < ActiveRecord::Base
   has_many :allow_times
   has_many :deny_dates
   belongs_to :user
+  geocoded_by :address
+  after_validation :geocode
 
   accepts_nested_attributes_for :allow_times, :deny_dates,
                                 reject_if: :all_blank, allow_destroy: true

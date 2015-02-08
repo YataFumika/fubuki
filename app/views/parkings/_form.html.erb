@@ -6,30 +6,56 @@
       <%= f.text_field :name, :class => 'text_field' %>
     </div>
   </div>
+
   <div class="control-group">
     <%= f.label :address, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :address, :class => 'text_field' %>
     </div>
   </div>
+
   <div class="control-group">
     <%= f.label :user_id, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :user_id, :class => 'text_field' %>
     </div>
   </div>
+
   <div class="control-group">
     <%= f.label :memo, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :memo, :class => 'text_field' %>
     </div>
   </div>
+
   <div class="control-group">
     <%= f.label :photo, :class => 'control-label' %>
     <div class="controls">
       <%= f.file_field :photo, :class => 'file_field' %>
     </div>
   </div>
+
+   <div class="control-group">
+    <%= f.label :latitude, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :latitude, :id => 'latitude' %>
+    </div>
+  </div>
+  
+  <div class="control-group">
+    <%= f.label :longitude, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :longitude, :id => 'longitude' %>
+    </div>
+  </div>
+
+    
+    <div id="area_name"></div>
+    <div id="map" style=" border:1px solid #FF0000"></div>
+
+  
+
+
   <h2><%= AllowTime.model_name.human.titleize %></h2>
   <% if @parking.allow_times.present? %>
     <%= render partial: "allow_times", locals: { allow_times: @parking.allow_times } %>
@@ -59,6 +85,8 @@
     </div>
   </div>
 
+ 
+
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
@@ -70,4 +98,6 @@
   $(document).ready(function(){
     $('.datepicker').datepicker();
   });
+  start_func();
 <% end %>
+
