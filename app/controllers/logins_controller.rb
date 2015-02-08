@@ -9,6 +9,7 @@ class LoginsController < ApplicationController
     @user = User.find_by_name params[:name]
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
+      flash.now.alert = "ログインに成功しました"
       redirect_to parkings_path
     else
       flash.now.alert = "ログインに失敗しました"
