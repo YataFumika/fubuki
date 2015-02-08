@@ -11,7 +11,7 @@ class LoginsController < ApplicationController
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
       flash.now.alert = "ログインに成功しました"
-      redirect_to parkings_path
+      redirect_to map_index_path
     else
       @user = User.new
       flash.now.alert = "ログインに失敗しました"
