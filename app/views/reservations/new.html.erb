@@ -17,7 +17,7 @@
     <b>駐車場</b>
     <%= f.text_field :parking_id, style: "width: 50px;", readonly: true %>
     <%= text_field_tag :parking_name, "", id: "parking_name", readonly: true, placeholder: "駐車場名" %>
-    <!-- <a href="#myModal" role="button" class="btn" data-toggle="modal">選択</a> -->
+    <a href="#myModal" role="button" class="btn" data-toggle="modal">選択</a>
   </div>
   <div class="field" style="margin: 15px;">
     <b>開始日時</b>
@@ -47,6 +47,14 @@
 <% end %>
 
 
+
+
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">駐車場選択</h3>
+  </div>
+  <div class="modal-body">
     <table class="table">
       <tr>
         <th>駐車場名</th>
@@ -67,14 +75,6 @@
         </tr>
       <% end %>
     </table>
-
-
-<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">駐車場選択</h3>
-  </div>
-  <div class="modal-body">
   </div>
 </div>
 
