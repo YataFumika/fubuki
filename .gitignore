@@ -16,3 +16,6 @@
 /tmp
 .DS_Store
 /public/uploads
+
+# Ignore gem file
+/vendor/bundle/
