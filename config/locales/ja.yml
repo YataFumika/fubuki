@@ -25,6 +25,8 @@ ja:
           memo: メモ
           photo: 写真
           created_at: 登録日
+          latitude: 緯度
+          longitude: 経度
         allow_time:
           weekday: 曜日
           start_time: 利用開始時間
