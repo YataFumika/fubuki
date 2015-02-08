@@ -7,9 +7,9 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.destroy_all
-u1 = User.create(name: "松江太郎", point: 100, email: "test1@test.com", password: "test", password_confirmation: "test")
-u2 = User.create(name: "出雲次郎", point: 100, email: "test2@test.com", password: "test", password_confirmation: "test")
-u3 = User.create(name: "島根三郎", point: 100, email: "test3@test.com", password: "test", password_confirmation: "test")
+u1 = User.create(name: "test1", point: 100, email: "test1@test.com", password: "test", password_confirmation: "test")
+u2 = User.create(name: "test2", point: 100, email: "test2@test.com", password: "test", password_confirmation: "test")
+u3 = User.create(name: "test3", point: 100, email: "test3@test.com", password: "test", password_confirmation: "test")
 
 Parking.destroy_all
 Parking.create(
