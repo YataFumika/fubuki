@@ -1,0 +1,8 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザ
+      parking: 駐車場
+      allow_time: 許可時間
+      deny_date: 不許可日
+      reservation: 予約
