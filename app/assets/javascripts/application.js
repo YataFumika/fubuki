@@ -69,7 +69,7 @@
         var myLatlng = new google.maps.LatLng(x,y);
         var mapOptions = {
           zoom: 17,
-          center: myLatlng
+          center: myLatlng,
           mapTypeId: google.maps.MapTypeId.HYBRID
         }
         // MapTypeId に、地図タイプを指定
