@@ -1,0 +1,12 @@
+/Users/Fuchs/.rbenv/versions/2.0.0-p247/bin/ruby -r ./siteconf20150208-2243-1ce26d5.rb extconf.rb 
+
+make "DESTDIR=" clean
+make: *** No rule to make target `clean'.  Stop.
+
+make "DESTDIR="
+echo "Nada."
+Nada.
+
+make "DESTDIR=" install
+echo "Nada."
+Nada.
