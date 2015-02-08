@@ -10,8 +10,9 @@
 <% if @current_user %>
   <%= link_to t("helpers.links.logout"), login_path(@current_user), class: "btn btn-warning", style: "float: right;", method: :delete %>
 <% end %>
-<%= flash_messages(flash) %>
-<%= yield %>
-
+<div id="main">
+  <%= flash_messages(flash) %>
+  <%= yield %>
+</div>
 </body>
 </html>
