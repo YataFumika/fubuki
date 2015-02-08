@@ -1,0 +1,17 @@
+/* スマホ横画面用 */
+@media screen and (max-width: 480px) {
+  .container{padding:0}
+  div[class^="col-"] {padding:0}
+  .row {margin:0;}
+  #main {
+    .btn { width: 90%; pagging: 5%;}
+    input { width: 90%; font-size: 130%; min-height: 40px; }
+    label { font-size: 100%; }
+  }
+}
+/* スマホ縦画面用 */
+@media screen and (max-width: 320px) {
+  .container{padding:0}
+  div[class^="col-"] {padding:0}
+  .row {margin:0;}
+}
