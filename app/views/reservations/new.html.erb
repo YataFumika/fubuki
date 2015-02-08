@@ -13,36 +13,40 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <a href="#myModal" role="button" class="btn" data-toggle="modal">駐車場選択</a>
-    <br>
+  <div class="field" style="margin: 15px;">
+    <b>駐車場</b>
     <%= f.text_field :parking_id, style: "width: 50px;", readonly: true %>
     <%= text_field_tag :parking_name, "", id: "parking_name", readonly: true, placeholder: "駐車場名" %>
+    <!-- <a href="#myModal" role="button" class="btn" data-toggle="modal">選択</a> -->
   </div>
-  <div class="field">
-    <%= f.label "開始日時" %><br>
+  <div class="field" style="margin: 15px;">
+    <b>開始日時</b>
     <%= f.datetime_select :start_at ,{:minute_step=>15} %>
   </div>
-  <div class="field">
-    <%= f.label "終了日時" %><br>
+  <div class="field" style="margin: 15px;">
+    <b>終了日時</b>
     <%= f.datetime_select :end_at,{:minute_step=>15} %>
   </div>
   <div class="actions">
     <%= f.hidden_field :user_id %>
     <%= f.hidden_field :status %>
-    <%= f.submit "予約登録" %>
-  </div>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <%= f.submit "予約登録", class: "btn btn-primary" %>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <%= link_to '一覧へ戻る', reservations_path, class: "btn btn-default" %>
+    </div>
 <% end %>
 
 
-<%= link_to 'Back', reservations_path %>
+<h2>駐車場検索</h2>
 
-<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">駐車場選択</h3>
-  </div>
-  <div class="modal-body">
+<%= form_tag(new_reservation_path) do |f| %>
+    <%= text_field_tag :parking_name, "",  readonly: true, placeholder: "時間" %>〜
+    <%= text_field_tag :parking_name, "", readonly: true, placeholder: "時間" %>
+  <%= link_to '検索', new_reservation_path, class: "btn btn-default" %>
+<% end %>
+
+
     <table class="table">
       <tr>
         <th>駐車場名</th>
@@ -63,6 +67,27 @@
         </tr>
       <% end %>
     </table>
+
+
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">駐車場選択</h3>
+  </div>
+  <div class="modal-body">
+  </div>
+</div>
+
+
+<div id="allow_time_model" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <h3 id="myModalLabel">駐車場選択</h3>
+  </div>
+  <div class="modal-body">
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">閉じる</button>
   </div>
 </div>
 

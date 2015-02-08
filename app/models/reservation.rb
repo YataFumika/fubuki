@@ -26,10 +26,4 @@ class Reservation < ActiveRecord::Base
   scope :demand, -> { where(status: DEMAND[:code]) }
   scope :approved, -> { where(status: APPROVED[:code]) }
   scope :denied, -> { where(status: DENIED[:code]) }
-
-  # AllowTimeに「予約希望の曜日」と「予約希望の時間」がマッチする
-  # DenyDateに「予約希望の日付」がマッチしない
-  # 「予約希望の時間」に、だれも予約を入れていない駐車場
-  def self.search(demand_weekday, demand_weekda)
-  end
 end

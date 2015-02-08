@@ -41,8 +41,8 @@ class ReservationsController < ApplicationController
   
   def create
     @reservation = Reservation.new(reservation_params)
-    if @reservation.save!
-      redirect_to reservations_path , notise:"予約申請を完了しました"
+    if @reservation.save
+      redirect_to reservations_path , notice:"予約申請を完了しました"
     else
       redirect_to new_reservation_path , alert:"予約申請に失敗しました"
     end
@@ -55,7 +55,18 @@ class ReservationsController < ApplicationController
   
   def update
     if @reservation.update(reservation_params)
-      redirect_to reservations_path , notise:"予約申請を変更しました"
+
+      if @reservation.status == 2
+        point = @reservation.user.point
+        @reservation.user.update_attributes(point: point - 10)
+
+        point = @reservation.parking.user.point
+        @reservation.parking.user.update_attributes(point: point + 10)
+        redirect_to reservations_path , notice:"予約申請を承認しました"
+      else
+        redirect_to reservations_path , notice:"予約申請を拒否しました"
+      end
+
     else
       redirect_to edit_reservation_path , alert:"予約申請変更に失敗しました"
     end

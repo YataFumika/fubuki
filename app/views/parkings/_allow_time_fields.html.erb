@@ -2,7 +2,7 @@
   <div class="control-group">
     <%= f.label :weekday, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :weekday, :class => 'text_field' %>
+      <%= f.select :weekday, constance_to_list(AllowTime::WEEKDAY_LIST), :class => 'select' %>
     </div>
   </div>
   <div class="control-group">

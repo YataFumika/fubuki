@@ -1,7 +1,7 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th></th>
+      <th><%= desp_user_th %></th>
       <th>駐車場</th>
       <th>住所</th>
       <th>開始時間</th>
@@ -12,7 +12,7 @@
   <tbody>
     <% list.each do |reservation| %>
       <tr>
-        <td><%= link_to reservation.id, reservation_path(reservation) %></td>
+        <td><%= desp_user_name(reservation) %></td>
         <td><%= reservation.parking.try(:name) %></td>
         <td><%= reservation.parking.try(:address) %></td>
         <td><%= reservation.start_at %></td>

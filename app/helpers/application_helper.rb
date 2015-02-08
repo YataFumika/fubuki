@@ -15,6 +15,10 @@ module ApplicationHelper
     list.map { |item| [item[:label], item[:code]] }
   end
 
+  def convert_code_to_name(list, code)
+    list.find { |item| item[:code] == code }[:label]
+  end
+
   private
 
   # divを表示

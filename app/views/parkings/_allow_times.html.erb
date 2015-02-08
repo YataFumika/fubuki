@@ -10,7 +10,7 @@
   <tbody>
     <% allow_times.each do |allow_time| %>
       <tr>
-        <td><%= allow_time.weekday %></td>
+        <td><%= convert_code_to_name(AllowTime::WEEKDAY_LIST, allow_time.weekday) %></td>
         <td><%= allow_time.start_time %></td>
         <td><%= allow_time.end_time %></td>
       </tr>
