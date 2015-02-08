@@ -15,9 +15,4 @@ class Reservation < ActiveRecord::Base
 
   # 貸す予定（Reservation.parking.user = login_user
   scope :lend, -> { where(parking_id: login_user.parkings) }
-
-  # スタブ
-  def self.login_user
-    return User.find_by(id: 1) || User.create(name: "篠原 卓也")
-  end
 end

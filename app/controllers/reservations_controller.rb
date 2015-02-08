@@ -3,12 +3,13 @@ class ReservationsController < ApplicationController
   before_action :reservation_params ,only: [:create,:update]
   
   def index
+    session[:user_id] = User.first.id
     #予約の一覧
     # 借りる予定 rent
-    @reservations_rent = Reservation.rent
+    @reservations_rent = Reservation.rent(current_user)
 
     # 貸す予定 lend
-    @reservations_lend = Reservation.lend
+    @reservations_lend = Reservation.lend(current_user)
   end
   
   def show
