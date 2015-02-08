@@ -13,8 +13,9 @@ class LoginsController < ApplicationController
       flash.now.alert = "ログインに成功しました"
       redirect_to parkings_path
     else
+      @user = User.new
       flash.now.alert = "ログインに失敗しました"
-      render "new"
+      redirect_to root_path
     end
   end
 
