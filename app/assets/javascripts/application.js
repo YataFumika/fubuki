@@ -79,7 +79,7 @@
         // TERRAIN 地形や植生などのマッピングをします。
  
         var map = new google.maps.Map
-           (document.getElementById("map"), mapOptions);
+          (document.getElementById("map"), mapOptions);
  
         //document.getElementById("lat").innerHTML = x;
         //document.getElementById("lng").innerHTML = y;
