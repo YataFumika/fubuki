@@ -13,7 +13,8 @@
     <div class="navbar-inner" style="padding: 7px;">
       <a class="brand" href="#">みんなで貸駐車</a>
       <ul class="nav">
-      
+        <li><%= link_to "ユーザ一覧", users_path, class: "btn" %></li>
+        <li><%= link_to "駐車場一覧", parkings_path, class: "btn" %></li>
       </ul>
       <ul class="nav pull-right">
         <li style="padding-right: 20px;"><p class="navbar-text" style="font-size:20px; width:100px;"><i class="icon-user icon-white"></i> <%= @current_user.try(:name) %></p></li>
