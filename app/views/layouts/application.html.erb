@@ -12,11 +12,10 @@
 <body>
 
 <% if @current_user %>
-  <div class="navbar">
+  <div class="navbar navbar-fixed-top">
     <div class="navbar-inner" style="padding: 7px;">
       <a class="brand" href="#">みんなで貸駐車</a>
       <ul class="nav">
-        <li><%= link_to "ユーザ一覧", users_path, class: "btn", style: "margin-top:0px;" %></li>
         <li><%= link_to "駐車場一覧", parkings_path, class: "btn", style: "margin-top:0px;" %></li>
         <li><%= link_to "予約一覧", reservations_path, class: "btn", style: "margin-top:0px;" %></li>
       </ul>

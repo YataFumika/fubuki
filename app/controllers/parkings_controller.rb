@@ -4,7 +4,7 @@ class ParkingsController < ApplicationController
   # GET /parkings
   # GET /parkings.json
   def index
-    @parkings = Parking.all
+    @parkings = Parking.owned(@current_user.id)
     list
   end
 
@@ -14,6 +14,7 @@ class ParkingsController < ApplicationController
       marker.lng parking.longitude
       marker.json({name: parking.name})
     end
+
   end
 
   # GET /parkings/1
