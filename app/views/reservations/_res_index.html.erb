@@ -19,11 +19,11 @@
         <td><%= reservation.end_at %></td>
         <td>
           <% if view_approve_btn %>
-          <%= link_to "承認",
+          <%= link_to "承認/拒否",
                       edit_reservation_path(reservation), :class => 'btn btn-mini' %>
           <% end %>
           <% if view_cancel_btn %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+          <%= link_to "取り消し",
                       reservation_path(reservation),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },

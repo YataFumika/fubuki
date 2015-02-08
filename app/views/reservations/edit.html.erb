@@ -1,4 +1,4 @@
-<h1>スペース利用申請の変更</h1>
+<h1>貸駐車依頼 承認/拒否</h1>
 
 <%= form_for(@reservation) do |f| %>
   <% if @reservation.errors.any? %>
@@ -13,24 +13,28 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label "利用希望者" %><br>
+  <div class="alert alert-info">
+  駐車場の貸し出し依頼が来ています。承認、または拒否を行ってください。
+  </div>
+
+  <div class="field" style="margin: 15px;">
+    <b>利用希望者</b>
     <%= @reservations_user %>
   </div>
-  <div class="field">
-    <%= f.label "希望駐車場" %><br>
+  <div class="field" style="margin: 15px;">
+    <b>希望駐車場</b>
     <%= @reservations_parking %>
   </div>
-  <div class="field">
-    <%= f.label "利用希望時間" %><br>
+  <div class="field" style="margin: 15px;">
+    <b>利用希望時間</b>
     <%= @reservation.start_at.strftime("%m月%d日%H時%M分〜") +@reservation.end_at.strftime("%m月%d日%H時%M分") %>
   </div>
   <div>
-    <%= f.label "状態" %>
-    <%= f.select :status,constance_to_list(Reservation::STATUS_LIST) %>
-  </div
+    この申請を
+    <%= f.select :status, [["承認する", 2],["拒否する", 3]] %>
+  </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "確定" %>
   </div>
 <% end %>
 

@@ -1,4 +1,4 @@
-<h1>スペース利用申請</h1>
+<h1>貸駐車 利用申請</h1>
 
 <%= form_for(@reservation) do |f| %>
   <% if @reservation.errors.any? %>
@@ -14,13 +14,10 @@
   <% end %>
 
   <div class="field">
-    <%= f.label "利用者" %><br>
-    <%= @current_user_name %>
-    <%= f.hidden_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.label "駐車場選択" %><br>
-    <%= f.select :parking_id ,@parkings.map{|p| [p.name,p.id] }, :include_blank => true %>
+    <a href="#myModal" role="button" class="btn" data-toggle="modal">駐車場選択</a>
+    <br>
+    <%= f.text_field :parking_id, style: "width: 50px;", readonly: true %>
+    <%= text_field_tag :parking_name, "", id: "parking_name", readonly: true, placeholder: "駐車場名" %>
   </div>
   <div class="field">
     <%= f.label "開始日時" %><br>
@@ -30,14 +27,54 @@
     <%= f.label "終了日時" %><br>
     <%= f.datetime_select :end_at,{:minute_step=>15} %>
   </div>
-  <div>
-    <%= f.label "状態" %>
-    <%= f.select :status,["希望"] %>
-  </div
   <div class="actions">
-    <%= f.submit %>
+    <%= f.hidden_field :user_id %>
+    <%= f.hidden_field :status %>
+    <%= f.submit "予約登録" %>
   </div>
 <% end %>
 
 
 <%= link_to 'Back', reservations_path %>
+
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">駐車場選択</h3>
+  </div>
+  <div class="modal-body">
+    <table class="table">
+      <tr>
+        <th>駐車場名</th>
+        <th>住所</th>
+        <th>メモ</th>
+        <th></th>
+      </tr>
+      <% @parkings.each do |p| %>
+        <tr>
+          <td><%= p.name %></td>
+          <td><%= p.address %></td>
+          <td><%= p.memo %></td>
+          <td>
+            <%= button_tag("選択",
+            class: "select_parking",
+            "aria-hidden" => "true",
+            data: { pid: p.id, pname: p.name, dismiss: "modal" }) %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<%= javascript_tag do %>
+  $(document).ready(function(){
+    $(".select_parking").on("click", function(){
+      var id = $(this).attr("data-pid");
+      var name = $(this).attr("data-pname");
+
+      $("#reservation_parking_id").val(id);
+      $("#parking_name").val(name);
+    });
+  });
+<% end %>
+
