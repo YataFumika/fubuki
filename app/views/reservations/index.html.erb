@@ -2,10 +2,10 @@
   <h1>予約一覧</h1>
 </div>
 
-<h2>あなたが借りる予定の貸駐車</h2>
+<b>あなたが借りる予定の貸駐車</b>
 <%= render partial: 'res_index', locals: { list: @reservations_rent } %>
 
-<h2>あなたが借す予定の貸駐車</h2>
+<b>あなたが借す予定の貸駐車</b>
 <%= render partial: 'res_index', locals: { list: @reservations_lend } %>
 
 <%= link_to t('.new', :default => t("helpers.links.new")),

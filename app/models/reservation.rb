@@ -11,8 +11,8 @@ class Reservation < ActiveRecord::Base
   validates :start_at, :end_at, :status, presence: true
 
   # 借りる予定（Reservation.user = login_user）
-  scope :rent, -> { where(user_id: login_user) }
+  scope :rent, ->(login_user) { where(user_id: login_user) }
 
   # 貸す予定（Reservation.parking.user = login_user
-  scope :lend, -> { where(parking_id: login_user.parkings) }
+  scope :lend, ->(login_user) { where(parking_id: login_user.try(:parkings)) }
 end
