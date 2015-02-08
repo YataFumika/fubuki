@@ -19,3 +19,4 @@
 
 # Ignore gem file
 /vendor/bundle/
+/config/database.yml
