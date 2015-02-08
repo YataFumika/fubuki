@@ -14,15 +14,22 @@ u3 = User.create(name: "test3", point: 100, email: "test3@test.com", password: "
 Parking.destroy_all
 Parking.create(
   address: "島根県松江市123-1",
-  name: "太郎の駐車場１",
+  name: "駐車場１",
   user_id: u1.id,
   memo: "101が該当の駐車場です。",
 )
 
 Parking.create(
-  address: "島根県松江市123-1",
-  name: "次郎の駐車場１",
+  address: "島根県松江市456-1",
+  name: "駐車場２",
   user_id: u2.id,
+  memo: "よろしくお願いします。",
+)
+
+Parking.create(
+  address: "島根県松江市789-1",
+  name: "駐車場３",
+  user_id: u3.id,
   memo: "よろしくお願いします。",
 )
 
