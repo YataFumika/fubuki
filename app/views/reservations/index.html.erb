@@ -2,12 +2,29 @@
   <h1>予約一覧</h1>
 </div>
 
-<b>あなたが借りる予定の貸駐車</b>
-<%= render partial: 'res_index', locals: { list: @reservations_rent } %>
+<% if @demand_count > 0 %>
+  <div class="alert alert-info" role="alert">
+    駐車場の貸し出し依頼が来ています。
+  </div>
+<% end %>
 
-<b>あなたが借す予定の貸駐車</b>
-<%= render partial: 'res_index', locals: { list: @reservations_lend } %>
+<ul class="nav nav-tabs nav-justified">
+  <%= tab_item("貸してもらう", Reservation::DESP_RENT[:code]) %>
+  <%= tab_item("貸し出す(未承認)", Reservation::DESP_DEMAND[:code]) %>
+  <%= tab_item("貸し出す(承認済)", Reservation::DESP_APPROVED[:code]) %>
+  <%= tab_item("貸し出し拒否", Reservation::DESP_DENIED[:code]) %>
+</ul>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_reservation_path,
-            :class => 'btn btn-primary' %>
+<h2><%= @title %></h2>
+<%= render partial: 'res_index',
+  locals: {
+    list: @reservations,
+    view_approve_btn: @view_approve_btn,
+    view_cancel_btn: @view_cancel_btn
+  } %>
+
+<% if Reservation::DESP_RENT[:code] == desp_type %>
+  <%= link_to "新規予約",
+              new_reservation_path,
+              :class => 'btn btn-primary' %>
+<% end %>

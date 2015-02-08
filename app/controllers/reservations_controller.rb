@@ -4,11 +4,31 @@ class ReservationsController < ApplicationController
   
   def index
     #予約の一覧
-    # 借りる予定 rent
-    @reservations_rent = Reservation.rent(current_user)
+    @view_approve_btn = true
+    @view_cancel_btn = true
+    @demand_count = Reservation.lend_to(current_user).demand.count
 
-    # 貸す予定 lend
-    @reservations_lend = Reservation.lend(current_user)
+    case params[:desp_type].to_i
+    when Reservation::DESP_DEMAND[:code]
+      @title = Reservation::DESP_DEMAND[:label]
+      @reservations = Reservation.lend_to(current_user).demand
+      @view_cancel_btn = true
+
+    when Reservation::DESP_APPROVED[:code]
+      @title = Reservation::DESP_APPROVED[:label]
+      @reservations = Reservation.lend_to(current_user).approved
+      @view_cancel_btn = true
+
+    when Reservation::DESP_DENIED[:code]
+      @title = Reservation::DESP_DENIED[:label]
+      @reservations = Reservation.lend_to(current_user).denied
+      @view_cancel_btn = true
+
+    else
+      @title = Reservation::DESP_RENT[:label]
+      @reservations = Reservation.rent_from(current_user)
+      @view_cancel_btn = true
+    end
   end
   
   def show
