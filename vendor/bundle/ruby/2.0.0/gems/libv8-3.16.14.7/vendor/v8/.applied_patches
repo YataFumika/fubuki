@@ -1,4 +1,0 @@
-/Users/matsue-city05/fubuki/vendor/bundle/ruby/2.0.0/gems/libv8-3.16.14.7/patches/clang/no-unused-private-field.patch
-/Users/matsue-city05/fubuki/vendor/bundle/ruby/2.0.0/gems/libv8-3.16.14.7/patches/clang33/silence-nested-anon-types-and-unused-function-warnings.patch
-/Users/matsue-city05/fubuki/vendor/bundle/ruby/2.0.0/gems/libv8-3.16.14.7/patches/disable-building-tests.patch
-/Users/matsue-city05/fubuki/vendor/bundle/ruby/2.0.0/gems/libv8-3.16.14.7/patches/fPIC-for-static.patch
