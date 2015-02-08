@@ -49,3 +49,11 @@ gem "twitter-bootstrap-rails"
 gem "bootstrap-datepicker-rails"
 gem "cocoon"
 gem "rails-i18n"
+
+group :development, :test do
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+end
+
