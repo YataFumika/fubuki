@@ -1,4 +1,8 @@
 ja:
+  logins:
+    new:
+      name: お名前
+      password: パスワード
   activerecord:
     models:
       user: ユーザ
@@ -6,3 +10,30 @@ ja:
       allow_time: 許可時間
       deny_date: 不許可日
       reservation: 予約
+    attributes:
+        user:
+          name: お名前
+          point: ポイント
+          email: メールアドレス
+          password: パスワード
+          password_confirmation: パスワード(確認)
+        parking:
+          id: 番号
+          name: 駐車場名
+          address: 住所
+          user_id: 持ち主
+          memo: メモ
+          photo: 写真
+          created_at: 登録日
+        allow_time:
+          weekday: 曜日
+          start_time: 利用開始時間
+          end_time: 利用終了時間
+        deny_date:
+          date: 日付
+        reservation:
+          user_id: 使用者
+          parking_id: 駐車場
+          start_at: 利用開始日時
+          end_at: 利用終了日時
+          status: 状態
