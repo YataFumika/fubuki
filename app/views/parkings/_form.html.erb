@@ -42,7 +42,7 @@
       <%= f.text_field :latitude, :id => 'latitude' %>
     </div>
   </div>
-  
+
   <div class="control-group">
     <%= f.label :longitude, :class => 'control-label' %>
     <div class="controls">
@@ -50,11 +50,11 @@
     </div>
   </div>
 
-    
+
     <div id="area_name"></div>
     <div id="map" style=" border:1px solid #FF0000"></div>
 
-  
+
 
 
   <h2><%= AllowTime.model_name.human.titleize %></h2>
@@ -86,7 +86,7 @@
     </div>
   </div>
 
- 
+
 
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
@@ -99,6 +99,5 @@
   $(document).ready(function(){
     $('.datepicker').datepicker();
   });
-  start_func();
 <% end %>
 
