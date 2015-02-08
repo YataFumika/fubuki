@@ -4,7 +4,7 @@ class ParkingsController < ApplicationController
   # GET /parkings
   # GET /parkings.json
   def index
-    @parkings = Parking.all
+    @parkings = Parking.owned(@current_user.id)
   end
 
   # GET /parkings/1

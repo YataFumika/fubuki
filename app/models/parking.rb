@@ -11,4 +11,6 @@ class Parking < ActiveRecord::Base
                                 reject_if: :all_blank, allow_destroy: true
 
   validates :name, :memo, presence: true
+
+  scope :owned, ->(user) { where(user_id: user) }
 end
