@@ -82,6 +82,7 @@ GEM
       treetop (~> 1.4.8)
     method_source (0.8.2)
     mime-types (1.25.1)
+    mini_magick (4.0.4)
     minitest (4.7.5)
     multi_json (1.10.1)
     pg (0.18.1)
@@ -180,6 +181,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   less-rails
+  mini_magick
   pg
   pry-byebug
   pry-rails

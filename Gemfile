@@ -51,6 +51,7 @@ gem "twitter-bootstrap-rails"
 gem "bootstrap-datepicker-rails"
 gem "cocoon"
 gem "rails-i18n"
+gem "mini_magick"
 
 group :development, :test do
   gem 'pry-rails'
