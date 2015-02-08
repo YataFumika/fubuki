@@ -7,12 +7,26 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
 <% if @current_user %>
-  <%= link_to t("helpers.links.logout"), login_path(@current_user), class: "btn btn-warning", style: "float: right;", method: :delete %>
+  <div class="navbar">
+    <div class="navbar-inner" style="padding: 7px;">
+      <a class="brand" href="#">みんなで貸駐車</a>
+      <ul class="nav">
+      
+      </ul>
+      <ul class="nav pull-right">
+        <li class="span1" style="padding-right: 20px;"><p class="navbar-text" style="font-size:20px;"><i class="icon-user icon-white"></i> <%= @current_user.try(:name) %></p></li>
+        <li><%= link_to t("helpers.links.logout"), login_path(@current_user), class: "btn", method: :delete, style: "margin-top:0px;" %></li>
+      </ul>
+    </div>
+  </div>
 <% end %>
+
 <div id="main">
   <%= flash_messages(flash) %>
   <%= yield %>
 </div>
+
 </body>
 </html>
