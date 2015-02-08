@@ -1,0 +1,26 @@
+development:
+  adapter: postgresql
+  host: localhost
+  encoding: utf8
+  database: fubuki_development
+  pool: 5
+  username:
+  password:
+
+test:
+  adapter: postgresql
+  host: localhost
+  encoding: utf8
+  database: fubuki_test
+  pool: 5
+  username:
+  password:
+
+production:
+  adapter: postgresql
+  host: localhost
+  encoding: utf8
+  database: fubuki
+  pool: 5
+  username:
+  password:
