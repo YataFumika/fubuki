@@ -9,7 +9,7 @@
   <dt><strong><%= model_class.human_attribute_name(:address) %>:</strong></dt>
   <dd><%= @parking.address %></dd>
   <dt><strong><%= model_class.human_attribute_name(:user_id) %>:</strong></dt>
-  <dd><%= @parking.user_id %></dd>
+  <dd><%= @parking.user.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:memo) %>:</strong></dt>
   <dd><%= @parking.memo %></dd>
   <dt><strong><%= model_class.human_attribute_name(:photo) %>:</strong></dt>

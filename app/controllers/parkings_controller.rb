@@ -24,7 +24,8 @@ class ParkingsController < ApplicationController
 
   # GET /parkings/new
   def new
-    @parking = Parking.new
+    @parking = Parking.new(user_id: @current_user.id)
+    @user_name = @current_user.name
   end
 
   # GET /parkings/1/edit
@@ -35,7 +36,7 @@ class ParkingsController < ApplicationController
   # POST /parkings.json
   def create
     @parking = Parking.new(parking_params)
-
+    @user_name = @current_user.name
     respond_to do |format|
       if @parking.save
         format.html { redirect_to @parking, notice: 'Parking was successfully created.' }
@@ -75,6 +76,7 @@ class ParkingsController < ApplicationController
 
   def set_parking
     @parking = Parking.includes(:allow_times, :deny_dates).find(params[:id])
+    @user_name = @parking.user.try(:name)
   end
 
   def parking_params
