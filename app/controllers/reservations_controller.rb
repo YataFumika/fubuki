@@ -16,7 +16,11 @@ class ReservationsController < ApplicationController
   end
 
   def new
-    @reservation = Reservation.new
+    @reservation = Reservation.new(
+      user_id:current_user.id
+      )
+    @current_user_name = current_user.name
+    @parkings = Parking.where.not(user_id:current_user)
   end
   
   def create
@@ -29,7 +33,8 @@ class ReservationsController < ApplicationController
   end
   
   def edit
-    
+    @reservations_user= User.find(@reservation.user_id).name      
+    @reservations_parking = Parking.find(@reservation.parking_id).name
   end
   
   def update

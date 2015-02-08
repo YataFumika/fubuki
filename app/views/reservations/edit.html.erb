@@ -1,5 +1,37 @@
 <h1>スペース利用申請の変更</h1>
 
-<%= render 'form' %>
+<%= form_for(@reservation) do |f| %>
+  <% if @reservation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@reservation.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @reservation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "利用希望者" %><br>
+    <%= @reservations_user %>
+  </div>
+  <div class="field">
+    <%= f.label "希望駐車場" %><br>
+    <%= @reservations_parking %>
+  </div>
+  <div class="field">
+    <%= f.label "利用希望時間" %><br>
+    <%= @reservation.start_at.strftime("%m月%d日%H時%M分〜") +@reservation.end_at.strftime("%m月%d日%H時%M分") %>
+  </div>
+  <div>
+    <%= f.label "状態" %>
+    <%= f.select :status,constance_to_list(Reservation::STATUS_LIST) %>
+  </div
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
 
 <%= link_to 'Back', reservations_path %>
